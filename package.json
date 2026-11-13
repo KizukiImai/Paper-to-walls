@@ -1,0 +1,16 @@
+{
+  "name": "paper-to-walls",
+  "version": "1.1.0",
+  "private": true,
+  "type": "module",
+  "description": "紙の線を壁のJSONへ変換する、ローカル完結のWebアプリ",
+  "scripts": {
+    "start": "node server/index.mjs",
+    "dev": "node --watch server/index.mjs",
+    "test": "node --test",
+    "check": "node scripts/check.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

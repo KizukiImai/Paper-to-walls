@@ -1,0 +1,51 @@
+GitHubへの初回登録（master）
+================================
+このZIPにはローカルGitリポジトリとmasterの初回コミットを含めています。
+GitHub上のリポジトリ作成・pushは、まだ行われていません。
+
+対象アカウント: KizukiImai
+新規リポジトリ名: paper-to-walls
+公開設定: Private
+ブランチ: master（デフォルトブランチもmasterに設定）
+
+使い方
+------
+1. ZIP全体を新しいフォルダーに展開してください。.gitも必要です。
+2. Git / GitHub CLI が未インストールなら、PowerShellで以下を実行してください。
+   winget install --id Git.Git --exact
+   winget install --id GitHub.cli --exact
+   インストール後、ターミナルを開き直してください。
+3. publish-github.bat をダブルクリックしてください。
+4. GitHub CLIが未認証ならブラウザでKizukiImaiにログインしてください。
+   ChatGPTのGitHub接続とは別に、PC上のGitHub CLIへの認証が必要です。
+5. SUCCESSと表示されたら、非公開設定・master・コミットSHAを確認済みです。
+
+スクリプトは既存リポジトリに上書きせず、新規作成だけを行います。
+同名リポジトリがある場合はエラーで停止します。
+別名にする場合は、展開先で以下を実行してください。
+   powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\publish-github.ps1 -RepositoryName paper-to-walls-web
+
+送信前にファイルを編集した場合は、内容を確認してcommitしてください。
+スクリプトは未コミットの変更を勝手に追加しません。
+実行途中で通信が切れた場合は、同じフォルダー・同じ名前で再実行できます。
+既存リポジトリの強制更新、公開化、トークンの書き出しは行いません。
+
+含めるもの
+----------
+アプリ本体 / 受信サーバー / Unity受信スクリプト / サンプル / テスト / ドキュメント
+
+.gitignoreで除外するもの
+----------------------
+.env、秘密鍵、node_modules、保存された間取り・写真、テスト結果、ログ、Unityキャッシュなど。
+
+確認範囲
+--------
+アプリの構文チェック・Node.jsテストは再実行しています。
+ローカルGitのmaster・コミット・除外設定・ZIPの復元を確認しています。
+Windows PowerShellとGitHubへの実際の作成・pushは、この実行環境では未検証です。
+
+公式コマンド資料
+--------------
+https://cli.github.com/manual/gh_repo_create
+https://cli.github.com/manual/gh_auth_login
+https://cli.github.com/manual/gh_repo_edit

@@ -1,0 +1,82 @@
+# Dependencies and build output
+node_modules/
+/dist/
+/build/
+.npm/
+.cache/
+
+# Local runtime state: may contain the user's layouts
+/user-data/
+/receiver-data/
+/exports/
+/uploads/
+*.paper-space.json
+
+# Local configuration, credentials and private keys
+.env
+.env.*
+!.env.example
+!.env.sample
+*.local
+*.local.*
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Generated test reports, browser artifacts and logs
+/test-results/
+/playwright-report/
+/blob-report/
+/artifacts/
+/coverage/
+.nyc_output/
+/docs/unit-tests.txt
+/docs/browser-results.json
+*.log
+npm-debug.log*
+
+# Optional Python tooling used for sample generation / browser tests
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+
+# Local editor and operating system files
+.vscode/
+.idea/
+.vs/
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+
+# Temporary files and manually created distribution archives
+*.tmp
+*.temp
+*.bak
+/paper-to-walls*.zip
+
+# Unity generated caches, should a full Unity project be added later
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Bb]uilds/
+/unity/[Ll]ibrary/
+/unity/[Tt]emp/
+/unity/[Oo]bj/
+/unity/[Ll]ogs/
+/unity/[Uu]ser[Ss]ettings/
+/unity/[Bb]uild/
+/unity/[Bb]uilds/
+
+# Keep source, tests, sample fixtures, schemas and documentation images tracked.

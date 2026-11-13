@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Paper to Walls - Unity layout v1",
+  "type": "object",
+  "required": ["schemaVersion", "layoutId", "revision", "units", "wallHeight", "wallThickness", "walls"],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "layoutId": {"type": "string", "minLength": 1, "maxLength": 100},
+    "revision": {"type": "integer", "minimum": 1},
+    "units": {"const": "m"},
+    "wallHeight": {"type": "number", "minimum": 0.1, "maximum": 20},
+    "wallThickness": {"type": "number", "minimum": 0.01, "maximum": 2},
+    "walls": {
+      "type": "array", "maxItems": 1000,
+      "items": {
+        "type": "object", "required": ["id", "ax", "ay", "bx", "by"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1, "maxLength": 100},
+          "ax": {"type": "number", "minimum": -10000, "maximum": 10000},
+          "ay": {"type": "number", "minimum": -10000, "maximum": 10000},
+          "bx": {"type": "number", "minimum": -10000, "maximum": 10000},
+          "by": {"type": "number", "minimum": -10000, "maximum": 10000}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$comment": "POST requests may omit revision; the server assigns it. Duplicate wall IDs and wall length >=0.001m are additionally checked in geometry.js."
+}
